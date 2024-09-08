@@ -14,8 +14,8 @@
     "sharp": "^0.33.5"
   },
   "engines": {
-    "node": "20.x",
-    "yarn": "1.x"
+    "node": "20.17.0"
+  
   },
   "type": "module"
 }
