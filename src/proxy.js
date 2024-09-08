@@ -40,11 +40,14 @@ export async function processRequest(request, reply) {
         return reply.send(`bandwidth-hero-proxy`);
     }
 
+    if (Array.isArray(url)) url = url.join('&url=');
+    url = url.replace(/http:\/\/1\.1\.\d\.\d\/bmi\/(https?:\/\/)?/i, 'http://');
 
-    request.params.url = decodeURIComponent(url);
+
+    request.params.url = url;
     request.params.webp = !request.query.jpeg;
     request.params.grayscale = request.query.bw != '0';
-    request.params.quality = parseInt(request.query.l, 10) || 40;
+    request.params.quality = parseInt(request.query.l, 10) || 1;
 
     
 
