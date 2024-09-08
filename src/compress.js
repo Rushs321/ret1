@@ -12,7 +12,7 @@ export async function compressImg(request, reply, input) {
                 quality: request.params.quality,
                 progressive: true,
                 optimizeScans: true,
-                smartSubsample: false
+                smartSubsample: false,
             });
 
         // Pipe the input stream into the Sharp instance and convert it to a buffer
